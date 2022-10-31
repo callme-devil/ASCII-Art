@@ -6,6 +6,12 @@ namespace ASCII_Art
 { 
     class Program
     {
+        static void PromptToPressAnyKey()
+        {
+            WriteLine("Press any key to continue...");
+            ReadKey(true);
+        }
+
         static void Main(string[] args)
         {
             //Setting the height and width to match our design
@@ -22,8 +28,7 @@ namespace ASCII_Art
                 ForegroundColor = ConsoleColor.Red;
                 WriteLine("--Warning--");
                 WriteLine("The console window is too small to display the design.");
-                
-
+                PromptToPressAnyKey();
                 ResetColor();
                 Clear();
             }
@@ -85,7 +90,7 @@ namespace ASCII_Art
          /_/  \_\            /_/  \_\   /_/  \_\            /_/  \_\");
 
             //? Keep Windows Open
-            ReadKey(true);
+            PromptToPressAnyKey();
         }
     }
 }
