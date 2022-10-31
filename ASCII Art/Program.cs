@@ -8,6 +8,26 @@ namespace ASCII_Art
     {
         static void Main(string[] args)
         {
+            //Setting the height and width to match our design
+            int designWidth = 90;
+            int designHeight = 60;
+
+            try
+            {
+                WindowHeight = designHeight;
+                WindowWidth = designWidth;
+            }
+            catch (System.ArgumentOutOfRangeException error)
+            {
+                ForegroundColor = ConsoleColor.Red;
+                WriteLine("--Warning--");
+                WriteLine("The console window is too small to display the design.");
+                
+
+                ResetColor();
+                Clear();
+            }
+
             WriteLine(@"                             That's A Modern Art
 
 
